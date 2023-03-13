@@ -57,17 +57,17 @@
 </template> -->
 
 <!-- <template> -->
-  <!-- <input v-model="num1" type="number" placeholder="num 1" />
+<!-- <input v-model="num1" type="number" placeholder="num 1" />
   <input v-model="num2" type="number" placeholder="num 2" /> -->
-  <!-- <div class="bg-gray-700 h-screen">
+<!-- <div class="bg-gray-700 h-screen">
     <div class="flex flex-wrap"> -->
-      <!-- <br />
+<!-- <br />
       num1 =>{{ num1 }}
       <br />
       num2 =>{{ num2 }}
       <br />
       res => {{ result }} -->
-      <!-- <div
+<!-- <div
         v-for="(item, index) in selected"
         class="w-1/4 border border-gray-500 text-center py-2"
         :class="item"
@@ -75,9 +75,9 @@
       >
         {{ index + 1 }}
       </div> -->
-      <!-- <div class="w-1/4  border border-gray-500 text-center py-2 " :class="selected.length > 0 ? selected[0] : 'bg-red-300'"
+<!-- <div class="w-1/4  border border-gray-500 text-center py-2 " :class="selected.length > 0 ? selected[0] : 'bg-red-300'"
   style=" padding-top: 5%; padding-bottom: 5%;">1</div> -->
-      <!-- <div class="w-1/4  border border-gray-500 text-center py-2 bg-blue-300" :class="selected[1]"
+<!-- <div class="w-1/4  border border-gray-500 text-center py-2 bg-blue-300" :class="selected[1]"
     style=" padding-top: 5%; padding-bottom: 5%;">2</div>
   <div class="w-1/4  border border-gray-500 text-center py-2 bg-green-300" :class="selected[2]"
     style=" padding-top: 5%; padding-bottom: 5%;">3</div>
@@ -99,7 +99,7 @@
     style=" padding-top: 5%; padding-bottom: 5%;">11</div>
   <div class="w-1/4  border border-gray-500 text-center py-2 bg-emerald-300" :class="selected[11]"
     style=" padding-top: 5%; padding-bottom: 5%;">12</div> -->
-    <!-- </div>
+<!-- </div>
     <div class="flex justify-center items-center py-10">
       <button
         class="bg-blue-500 hover:bg-blue-800 hover:text-green-400 font-bold px-6 py-1 m-9 rounded"
@@ -159,51 +159,31 @@ export default {
           let randomness = Math.floor(Math.random() * 7);
           this.selected.push(this.colors[randomness]);
         }); -->
-      // let randomness1 = Math.floor(Math.random() * 7)
-      // this.selected[0] = this.colors[randomness1]
-      // let randomness2 = Math.floor(Math.random() * 7)
-      // this.selected[1] = this.colors[randomness2]
-      // let randomness3 = Math.floor(Math.random() * 7)
-      // this.selected[2] = this.colors[randomness3]
-      // let randomness4 = Math.floor(Math.random() * 7)
-      // this.selected[3] = this.colors[randomness4]
-      // let randomness5 = Math.floor(Math.random() * 7)
-      // this.selected[4] = this.colors[randomness5]
-      // let randomness6 = Math.floor(Math.random() * 7)
-      // this.selected[5] = this.colors[randomness6]
-      // let randomness7 = Math.floor(Math.random() * 7)
-      // this.selected[6] = this.colors[randomness7]
-      // let randomness8 = Math.floor(Math.random() * 7)
-      // this.selected[7] = this.colors[randomness8]
-      // let randomness9 = Math.floor(Math.random() * 7)
-      // this.selected[8] = this.colors[randomness9]
-      // let randomness10 = Math.floor(Math.random() * 7)
-      // this.selected[9] = this.colors[randomness10]
-      // let randomness11 = Math.floor(Math.random() * 7)
-      // this.selected[10] = this.colors[randomness11]
-      // let randomness12 = Math.floor(Math.random() * 7)
-      // this.selected[11] = this.colors[randomness12]
-
-      // console.log(this.selected);
-
-      //   if (this.count % 2 === 0) {
-      //     this.backgroundColor = 'bg-green-500';
-      //     this.count = this.count + 1
-      //   } else if (this.count % 3 === 0) {
-      //     this.backgroundColor = 'bg-indigo-500'
-      //     this.count = this.count + 1
-      //   } else {
-      //     this.backgroundColor = 'bg-yellow-500'
-      //     this.count = this.count + 1
-      //   }
-      //   console.log(this.count)
-      // },
-//     },
-//   },
-// };
+<!-- // let randomness1 = Math.floor(Math.random() * 7) // this.selected[0] =
+this.colors[randomness1] // let randomness2 = Math.floor(Math.random() * 7) //
+this.selected[1] = this.colors[randomness2] // let randomness3 =
+Math.floor(Math.random() * 7) // this.selected[2] = this.colors[randomness3] //
+let randomness4 = Math.floor(Math.random() * 7) // this.selected[3] =
+this.colors[randomness4] // let randomness5 = Math.floor(Math.random() * 7) //
+this.selected[4] = this.colors[randomness5] // let randomness6 =
+Math.floor(Math.random() * 7) // this.selected[5] = this.colors[randomness6] //
+let randomness7 = Math.floor(Math.random() * 7) // this.selected[6] =
+this.colors[randomness7] // let randomness8 = Math.floor(Math.random() * 7) //
+this.selected[7] = this.colors[randomness8] // let randomness9 =
+Math.floor(Math.random() * 7) // this.selected[8] = this.colors[randomness9] //
+let randomness10 = Math.floor(Math.random() * 7) // this.selected[9] =
+this.colors[randomness10] // let randomness11 = Math.floor(Math.random() * 7) //
+this.selected[10] = this.colors[randomness11] // let randomness12 =
+Math.floor(Math.random() * 7) // this.selected[11] = this.colors[randomness12]
+// console.log(this.selected); // if (this.count % 2 === 0) { //
+this.backgroundColor = 'bg-green-500'; // this.count = this.count + 1 // } else
+if (this.count % 3 === 0) { // this.backgroundColor = 'bg-indigo-500' //
+this.count = this.count + 1 // } else { // this.backgroundColor =
+'bg-yellow-500' // this.count = this.count + 1 // } // console.log(this.count)
+// }, // }, // }, // }; -->
 <!-- </script> -->
 
-<template>
+<!-- <template>
   <div>
     <div ref="container"></div>
     <input type="range" v-model="rotation" min="0" max="360" />
@@ -369,4 +349,73 @@ export default {
     },
   },
 };
+</script> -->
+<!-- 
+<script setup>
+import {ref} from vue;
+const count = ref(0)
 </script>
+<template>
+  <main>
+    <div>
+      <h4>The count is ..</h4>
+      <h1>{{ count }}</h1>
+      <button @click="count++">+</button>
+      <button @click="count--">-</button>
+    </div>
+  </main>
+</template>
+<style>
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div {
+  text-align: center;
+}
+</style>
+
+<script>
+export default {
+  name: "App",
+};
+</script> -->
+
+<script setup>
+import { ref } from "vue";
+const count = ref(0);
+</script>
+
+<template>
+  <main class="h-screen bg-slate-500 flex items-center justify-center">
+    <div class="text-3xl font-arial text-center">
+      <h4 class="">The count is ..</h4>
+      <h1>{{ count }}</h1>
+      <div class="flex justify-center mt-4">
+        <button
+          class="bg-green-400 text-white font-bold py-2 px-4 rounded ml-4"
+          @click="count++"
+        >
+          +
+        </button>
+        <button
+          class="bg-blue-400 text-white font-bold py-2 px-4 rounded ml-4"
+          @click="count--"
+        >
+          -
+        </button>
+      </div>
+    </div>
+  </main>
+</template>
+
+<!-- <script>
+export default {
+  name: "App",
+  data() {
+    return {};
+  },
+  methods() {},
+};
+</script> -->
