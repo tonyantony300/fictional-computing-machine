@@ -381,14 +381,15 @@ export default {
   name: "App",
 };
 </script> -->
-
+<!-- 
 <script setup>
-import { ref } from "vue";
-const count = ref(0);
-</script>
+// import { ref } from "vue";
+// const count = ref(0);
+// </script> 
 
-<template>
-  <main class="h-screen bg-slate-500 flex items-center justify-center">
+ <template>
+  <div>again</div> -->
+<!-- <main class="h-screen bg-slate-500 flex items-center justify-center">
     <div class="text-3xl font-arial text-center">
       <h4 class="">The count is ..</h4>
       <h1>{{ count }}</h1>
@@ -407,8 +408,8 @@ const count = ref(0);
         </button>
       </div>
     </div>
-  </main>
-</template>
+  </main> -->
+<!-- </template> -->
 
 <!-- <script>
 export default {
@@ -419,3 +420,29 @@ export default {
   methods() {},
 };
 </script> -->
+
+<script setup></script>
+<template>
+  <main>
+    <div class="container h-screen mx-7 my-9">
+      <header class="font-mono text-5xl flex justify-between">
+        <h1 class="text-gray-400">Notes</h1>
+        <button class="text-green-400 w-12 h-12">+</button>
+      </header>
+      <div class="flex justify-between mt-24">
+        <div class="bg-blue-500 rounded-lg w-32 h-32">
+          <p class="font-mono mt-12 ml-8">Welcome</p>
+          <p class="">12/23/12</p>
+        </div>
+        <div class="bg-blue-500 rounded-lg w-32 h-32">
+          <p class="font-mono mt-12 ml-8">rookie</p>
+          <p class=""></p>
+        </div>
+        <div class="bg-blue-500 rounded-lg w-32 h-32">
+          <p class="font-mono mt-12 ml-8">legend</p>
+          <p class=""></p>
+        </div>
+      </div>
+    </div>
+  </main>
+</template>
