@@ -421,28 +421,187 @@ export default {
 };
 </script> -->
 
-<script setup></script>
+<!-- 
+<div class="container h-screen mx-7 my-9">
+  <header class="font-mono text-5xl flex justify-between">
+    <h1 class="text-gray-400">Notes</h1>
+    <button class="text-green-400 w-12 h-12">+</button>
+  </header>
+  <div class="flex justify-between mt-24">
+    <div class="bg-blue-500 rounded-lg w-32 h-32">
+      <p class="font-mono mt-12 ml-8">Welcome</p>
+      <p class=""></p>
+    </div>
+    <div class="bg-blue-500 rounded-lg w-32 h-32">
+      <p class="font-mono mt-12 ml-8">rookie</p>
+      <p class=""></p>
+    </div>
+    <div class="bg-blue-500 rounded-lg w-32 h-32">
+      <p class="font-mono mt-12 ml-8">legend</p>
+      <p class=""></p>
+    </div>
+  </div>
+</div> -->
+
+<script setup>
+import { ref } from "vue";
+const showModal = ref(false);
+const newNote = ref("");
+const notes = ref([]);
+const errorMessage = ref("");
+
+const getRandomColor = () => {
+  return "hsl(" + Math.random() * 360 + ", 100%, 75%)";
+};
+
+const addNotes = () => {
+  if (newNote.value.length < 10) {
+    newNote.value = "";
+    errorMessage.value = "please type in atleast 10 letters";
+    return;
+  }
+  notes.value.push({
+    text: newNote.value,
+    id: Math.floor(Math.random() * 100000),
+    date: new Date(),
+    backgroundColor: getRandomColor(),
+  });
+  showModal.value = false;
+  newNote.value = "";
+  errorMessage.value = "";
+};
+</script>
 <template>
   <main>
-    <div class="container h-screen mx-7 my-9">
-      <header class="font-mono text-5xl flex justify-between">
-        <h1 class="text-gray-400">Notes</h1>
-        <button class="text-green-400 w-12 h-12">+</button>
+    <div class="overlay" v-if="showModal">
+      <div class="modal">
+        <textarea
+          name="notes"
+          v-model.trim="newNote"
+          id="notes"
+          cols="30"
+          rows="10"
+        >
+        </textarea>
+        <p v-if="errorMessage">{{ errorMessage }}</p>
+        <button @click="addNotes(newNote)">Add Note</button>
+        <button class="close" @click="showModal = false">Close</button>
+      </div>
+    </div>
+    <div class="container">
+      <header>
+        <h1>Notes</h1>
+        <button @click="showModal = true">+</button>
       </header>
-      <div class="flex justify-between mt-24">
-        <div class="bg-blue-500 rounded-lg w-32 h-32">
-          <p class="font-mono mt-12 ml-8">Welcome</p>
-          <p class="">12/23/12</p>
-        </div>
-        <div class="bg-blue-500 rounded-lg w-32 h-32">
-          <p class="font-mono mt-12 ml-8">rookie</p>
-          <p class=""></p>
-        </div>
-        <div class="bg-blue-500 rounded-lg w-32 h-32">
-          <p class="font-mono mt-12 ml-8">legend</p>
-          <p class=""></p>
+      <div class="cards-container">
+        <div
+          class="card"
+          v-for="item in notes"
+          :key="item.id"
+          :style="{ backgroundColor: item.backgroundColor }"
+        >
+          <p class="main-text">
+            {{ item.text }}
+          </p>
+          <p class="date">{{ item.date.toLocaleDateString("en-uk") }}</p>
         </div>
       </div>
     </div>
   </main>
 </template>
+
+<style scoped>
+main {
+  height: 100vh;
+  width: 100vw;
+}
+.container {
+  max-width: 1000px;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-weight: bold;
+  margin-bottom: 25px;
+  font-size: 75px;
+}
+
+header button {
+  border: none;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background-color: blue;
+  border-radius: 100%;
+  color: white;
+  font-size: 20px;
+}
+
+.card {
+  width: 225px;
+  height: 225px;
+  background-color: rgb(237, 182, 44);
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.date {
+  font-size: 12.5px;
+  font-weight: bold;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0, 0.77);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  width: 550px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal button {
+  padding: 10px 20px;
+  font-size: 20px;
+  width: 100%;
+  background-color: blueviolet;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.modal .close {
+  background-color: rgb(193, 15, 15);
+  margin-top: 7px;
+}
+</style>
