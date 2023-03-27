@@ -1,7 +1,7 @@
 <script setup>
 import q from "../data/quizes.json";
 import { ref, watch } from "vue";
-import Card from "../components/icons/Cards.vue";
+import Card from "../components/icons/Card.vue";
 
 const search = ref("");
 const quizes = ref(q);
